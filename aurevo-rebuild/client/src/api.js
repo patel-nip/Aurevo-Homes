@@ -1,4 +1,8 @@
-const BASE_URL = process.env.REACT_APP_API_URL;
+import axios from 'axios';
+
+const api = axios.create({
+    BASE_URL = process.env.REACT_APP_API_URL
+});
 
 const api = {
     post: async (endpoint, data) => {
@@ -29,3 +33,4 @@ const api = {
 };
 
 export default api;
+
