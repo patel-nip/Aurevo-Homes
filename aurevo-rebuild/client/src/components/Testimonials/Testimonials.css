@@ -1,0 +1,181 @@
+/* =============================================
+   TESTIMONIALS SECTION
+   ============================================= */
+.testimonials {
+  background: var(--brand-white);
+  padding: var(--section-padding);
+}
+
+.testimonials__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.testimonials__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.testimonials h2 {
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 800;
+  color: var(--brand-text);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Red underline on city name — matches reference */
+.testimonials__city {
+  text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 3px;
+}
+
+.testimonials__header p {
+  font-size: 15px;
+  color: var(--brand-muted);
+  line-height: 1.6;
+}
+
+/* =============================================
+   3x2 GRID
+   ============================================= */
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =============================================
+   REVIEW CARD
+   ============================================= */
+.review-card {
+  background: var(--brand-light);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ---- Stars ---- */
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star--filled {
+  color: var(--brand-primary);
+}
+
+.star--empty {
+  color: #ddd;
+}
+
+/* ---- Review Text ---- */
+.review-card__text {
+  font-size: 14px;
+  color: var(--brand-text);
+  line-height: 1.65;
+  flex: 1; /* pushes author to bottom */
+}
+
+/* ---- Author Row ---- */
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.review-card__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-card__author-info strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand-text);
+}
+
+.review-card__author-info span {
+  font-size: 12px;
+  color: var(--brand-muted);
+}
+
+/* =============================================
+   AVATAR
+   ============================================= */
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Photo avatar — gray bg to simulate real photo */
+.review-avatar--photo {
+  background: #c0c0c0;
+  color: #555;
+}
+
+.review-avatar__photo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .testimonials__grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials__header {
+    margin-bottom: 36px;
+  }
+
+  .review-card {
+    padding: 24px 20px;
+  }
+}

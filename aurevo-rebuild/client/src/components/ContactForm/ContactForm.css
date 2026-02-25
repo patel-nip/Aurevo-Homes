@@ -1,0 +1,236 @@
+/* =============================================
+   CONTACT FORM — shared across Hero + CTASection
+   ============================================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ---- Two-column row (name + company) ---- */
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ---- Field wrapper ---- */
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+/* ---- All inputs + select base style ---- */
+.contact-form input,
+.contact-form select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--brand-border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font-main);
+  color: var(--brand-text);
+  background: var(--brand-white);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.contact-form input::placeholder {
+  color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.08);
+}
+
+/* ---- Phone field with flag ---- */
+.form__phone-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--brand-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--brand-white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form__phone-wrapper:focus-within {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.08);
+}
+
+.form__phone-flag {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1.5px solid var(--brand-border);
+  height: 100%;
+  min-height: 46px;
+  background: var(--brand-light);
+  flex-shrink: 0;
+}
+
+.form__phone-flag svg {
+  display: block;
+  border-radius: 2px;
+}
+
+.form__phone-input {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 12px !important;
+  flex: 1;
+}
+
+.form__phone-input:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ---- Label above dropdown ---- */
+.form__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-text);
+}
+
+/* ---- Select with custom arrow ---- */
+.form__select-wrapper {
+  position: relative;
+}
+
+.form__select-wrapper select {
+  width: 100%;
+  cursor: pointer;
+  padding-right: 40px; /* space for arrow */
+}
+
+.form__select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--brand-muted);
+  display: flex;
+  align-items: center;
+}
+
+/* ---- Submit Button ---- */
+.form__submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-main);
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s, transform 0.1s, opacity 0.2s;
+  letter-spacing: 0.2px;
+}
+
+.form__submit:hover:not(:disabled) {
+  background: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+.form__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.form__submit--loading {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* ---- Error Message ---- */
+.form__error {
+  font-size: 13px;
+  color: var(--brand-primary);
+  text-align: center;
+  padding: 4px 0;
+}
+
+/* ---- WhatsApp QR ---- */
+.form__whatsapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.form__whatsapp-label {
+  font-size: 13px;
+  color: var(--brand-muted);
+}
+
+.form__qr {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* ---- Success State ---- */
+.form__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  min-height: 300px;
+}
+
+.form__success-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.form__success h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.form__success p {
+  font-size: 14px;
+  color: var(--brand-muted);
+  max-width: 260px;
+  line-height: 1.6;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 480px) {
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .form__submit {
+    font-size: 14px;
+    padding: 14px;
+  }
+}

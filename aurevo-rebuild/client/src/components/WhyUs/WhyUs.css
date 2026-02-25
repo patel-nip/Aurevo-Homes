@@ -1,0 +1,124 @@
+/* =============================================
+   WHY US SECTION
+   ============================================= */
+.whyus {
+  background: var(--brand-light);
+  padding: var(--section-padding);
+}
+
+.whyus__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ---- Outer Card ---- */
+.whyus__card {
+  background: var(--brand-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden; /* clips image to rounded corners */
+}
+
+/* =============================================
+   LEFT — CHECKLIST
+   ============================================= */
+.whyus__left {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* ---- Each Point ---- */
+.whyus__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.whyus__item-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.whyus__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.whyus__item-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-text);
+  line-height: 1.3;
+}
+
+.whyus__item-text p {
+  font-size: 13px;
+  color: var(--brand-muted);
+  line-height: 1.55;
+}
+
+/* =============================================
+   RIGHT — IMAGE
+   ============================================= */
+.whyus__right {
+  position: relative;
+  min-height: 420px;
+}
+
+.whyus__right img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .whyus__left {
+    padding: 40px 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .whyus__card {
+    grid-template-columns: 1fr;
+  }
+
+  .whyus__right {
+    min-height: 300px;
+    position: relative;
+  }
+
+  .whyus__right img {
+    position: relative;
+    height: 300px;
+    object-position: center 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyus__left {
+    padding: 32px 24px;
+    gap: 22px;
+  }
+
+  .whyus__right img {
+    height: 240px;
+  }
+
+  .whyus__item-text strong {
+    font-size: 14px;
+  }
+}

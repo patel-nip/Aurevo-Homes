@@ -1,0 +1,233 @@
+/* =============================================
+   PROCESS SECTION
+   ============================================= */
+.process {
+  background: var(--brand-dark);
+  padding: var(--section-padding);
+}
+
+.process__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.process__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.process h2 {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 800;
+  color: var(--brand-white);
+  margin-top: 14px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process__subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* =============================================
+   STEPS ROW
+   ============================================= */
+.process__steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Each step + its trailing divider */
+.process__step-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+}
+
+/* ---- Individual Step ---- */
+.process__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  gap: 12px;
+  padding: 0 8px;
+}
+
+/* Red icon circle */
+.process__step-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--brand-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-white);
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+/* Step number tag */
+.process__step-number {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.process__step h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brand-white);
+  line-height: 1.3;
+}
+
+.process__step p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  max-width: 180px;
+}
+
+/* =============================================
+   DIVIDER BETWEEN STEPS
+   ============================================= */
+.process__divider {
+  display: flex;
+  align-items: center;
+  padding-top: 32px; /* aligns to center of icon */
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+.process__divider-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.process__divider-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   BOTTOM CTA
+   ============================================= */
+.process__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.process__cta p {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-white);
+}
+
+.process__cta-btn {
+  display: inline-block;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  padding: 15px 36px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.process__cta-btn:hover {
+  background: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .process__step p {
+    max-width: 150px;
+  }
+
+  .process__divider-line {
+    width: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack steps vertically on tablet */
+  .process__steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .process__step-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .process__step {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .process__step p {
+    max-width: 100%;
+  }
+
+  /* Rotate divider to point downward on mobile */
+  .process__divider {
+    flex-direction: column;
+    padding-top: 0;
+    padding: 8px 0;
+    gap: 2px;
+  }
+
+  .process__divider-line {
+    width: 1px;
+    height: 24px;
+  }
+
+  .process__divider-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .process__header {
+    margin-bottom: 48px;
+  }
+
+  .process__cta {
+    margin-top: 48px;
+    padding-top: 36px;
+  }
+
+  .process__cta p {
+    font-size: 18px;
+  }
+}

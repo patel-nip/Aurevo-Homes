@@ -1,0 +1,149 @@
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero {
+  position: relative;
+  background: url('../../../public/assets/top_most_man_with_marker.jpg') center / cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--section-padding);
+  padding-top: 100px;
+}
+
+/* Dark overlay on background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  z-index: 0;
+}
+
+/* ---- Inner Layout ---- */
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* =============================================
+   LEFT SIDE — TEXT CONTENT
+   ============================================= */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero__title {
+  font-size: clamp(26px, 3.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--brand-white);
+
+  /* Fades red → transparent going right, per line */
+  background: linear-gradient(
+    to right,
+    rgba(204, 0, 0, 0.97) 0%,
+    rgba(204, 0, 0, 0.92) 55%,
+    rgba(204, 0, 0, 0.0) 100%
+  );
+
+  padding: 5px 52px 5px 14px;
+  border-radius: 3px;
+
+  /* CRITICAL — each line gets its own gradient independently */
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hero__subtitle {
+  color: var(--brand-white);
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.hero__desc {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ---- USP List ---- */
+.hero__usps {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero__usp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--brand-white);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero__usp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--brand-white);
+}
+
+/* =============================================
+   RIGHT SIDE — FORM CARD
+   ============================================= */
+.hero__form-wrapper {
+  background: var(--brand-white);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-md);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .hero__inner {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: var(--section-padding-mobile);
+    padding-top: 80px;
+    min-height: auto;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero__title {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__form-wrapper {
+    padding: 24px 20px;
+  }
+}

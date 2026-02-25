@@ -1,0 +1,182 @@
+/* =============================================
+   CTA SECTION
+   ============================================= */
+.cta {
+  position: relative;
+  background: url('../../../public/assets/background_of_very_bottom_where_contact_form_is_there.jpg')
+    center / cover no-repeat;
+  padding: var(--section-padding);
+}
+
+/* Dark overlay on background image */
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* =============================================
+   WHITE CARD
+   ============================================= */
+.cta__card {
+  background: var(--brand-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* =============================================
+   LEFT — TEXT CONTENT
+   ============================================= */
+.cta__left {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-right: 1px solid var(--brand-border);
+}
+
+.cta__left .section-tag {
+  align-self: flex-start;
+  margin-bottom: 16px;
+}
+
+.cta h2 {
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 800;
+  color: var(--brand-text);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.cta__desc {
+  font-size: 14px;
+  color: var(--brand-muted);
+  line-height: 1.65;
+}
+
+/* ---- Dividers ---- */
+.cta__divider {
+  border: none;
+  border-top: 1px solid var(--brand-border);
+  margin: 24px 0;
+}
+
+/* ---- Benefits Checklist ---- */
+.cta__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cta__benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--brand-text);
+  line-height: 1.5;
+}
+
+/* ---- Contact Details ---- */
+.cta__contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cta__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--brand-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cta__contact-item:hover {
+  color: var(--brand-primary);
+}
+
+.cta__contact-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* =============================================
+   RIGHT — FORM
+   ============================================= */
+.cta__right {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cta__form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-text);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .cta__left,
+  .cta__right {
+    padding: 40px 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .cta__card {
+    grid-template-columns: 1fr;
+  }
+
+  .cta__left {
+    border-right: none;
+    border-bottom: 1px solid var(--brand-border);
+    padding: 36px 28px;
+  }
+
+  .cta__right {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: var(--section-padding-mobile);
+  }
+
+  .cta__left,
+  .cta__right {
+    padding: 28px 20px;
+  }
+
+  .cta h2 {
+    font-size: 22px;
+  }
+}

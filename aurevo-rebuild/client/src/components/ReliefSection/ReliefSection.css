@@ -1,0 +1,141 @@
+/* =============================================
+   RELIEF SECTION
+   ============================================= */
+.relief {
+  background: var(--brand-dark);
+  padding: var(--section-padding);
+}
+
+.relief__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* =============================================
+   LEFT — TEXT CONTENT
+   ============================================= */
+.relief__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Override section-tag for dark bg —
+   already red so it stays the same,
+   just ensure white text shows correctly */
+.relief .section-tag {
+  align-self: flex-start;
+}
+
+.relief h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  color: var(--brand-white);
+  margin-top: 14px;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.relief__desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+/* ---- Checklist ---- */
+.relief__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.relief__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--brand-white);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Override check-icon on dark bg — stays red */
+.relief .check-icon {
+  margin-top: 2px;
+}
+
+/* ---- CTA Button ---- */
+.relief__cta {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.relief__cta:hover {
+  background: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* =============================================
+   RIGHT — IMAGE
+   ============================================= */
+.relief__image-wrapper {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 520px;
+}
+
+.relief__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .relief__inner {
+    gap: 48px;
+  }
+
+  .relief__image-wrapper {
+    height: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .relief__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .relief__image-wrapper {
+    height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .relief__image-wrapper {
+    height: 280px;
+  }
+
+  .relief__item {
+    font-size: 14px;
+  }
+}
